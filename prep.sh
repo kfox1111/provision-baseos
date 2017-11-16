@@ -13,7 +13,6 @@ if [ ! -d data ]; then
 	chmod +x "$DIR"/p7zip_16.02/bin/7z
 	mkdir data
 	pushd data
-	ls -l ../CentOS-7-x86_64-DVD-1708.iso
 	ls -l "$DIR"/p7zip_16.02/bin/7z
 	ldd "$DIR"/p7zip_16.02/bin/7z
 	"$DIR"/p7zip_16.02/bin/7z x ../CentOS-7-x86_64-DVD-1708.iso
