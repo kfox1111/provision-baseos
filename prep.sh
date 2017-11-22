@@ -9,6 +9,6 @@ echo "Working dir: `pwd`"
 
 if [ ! -d data ]; then
 	mkdir data
-        docker run -i --rm -v `pwd`/CentOS-7-x86_64-DVD-1708.iso:/dvd.iso -v `pwd`/data:/data --entrypoint /bin/sh mainiak/p7zip -c 'cd /data; 7z x /dvd.iso'
+        docker run -i --rm -v `pwd`/CentOS-7-x86_64-DVD-1708.iso:/dvd.iso -v `pwd`/data:/data --entrypoint /bin/sh ubuntu -c 'apt-get update; apt-get install -y xorriso; xorriso -osirrox on -indev /dvd.iso -extract / /data'
 	chmod --recursive 755 data
 fi
